@@ -457,7 +457,7 @@ U 1 1 64DCA557
 P 6300 3200
 F 0 "TP4" H 6358 3318 50  0000 L CNN
 F 1 "TestPoint" H 6358 3227 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 6500 3200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6500 3200 50  0001 C CNN
 F 3 "~" H 6500 3200 50  0001 C CNN
 	1    6300 3200
 	1    0    0    -1  
@@ -704,10 +704,6 @@ F 3 "~" H 2450 6850 50  0001 C CNN
 	1    2450 6850
 	-1   0    0    1   
 $EndComp
-Text Label 950  6450 0    50   ~ 0
-12
-Text Label 950  6850 0    50   ~ 0
-11
 $Comp
 L power:GND #PWR0115
 U 1 1 64F3F131
@@ -786,7 +782,7 @@ U 1 1 64F610BC
 P 5400 6650
 F 0 "TP2" H 5458 6768 50  0000 L CNN
 F 1 "TestPoint" H 5458 6677 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_1.0x1.0mm" H 5600 6650 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 5600 6650 50  0001 C CNN
 F 3 "~" H 5600 6650 50  0001 C CNN
 	1    5400 6650
 	1    0    0    -1  
@@ -933,12 +929,12 @@ Connection ~ 4250 7000
 $Comp
 L power:PWR_FLAG #FLG0102
 U 1 1 64DA8C73
-P 3000 6650
-F 0 "#FLG0102" H 3000 6725 50  0001 C CNN
-F 1 "PWR_FLAG" H 3000 6823 50  0000 C CNN
-F 2 "" H 3000 6650 50  0001 C CNN
-F 3 "~" H 3000 6650 50  0001 C CNN
-	1    3000 6650
+P 3300 6650
+F 0 "#FLG0102" H 3300 6725 50  0001 C CNN
+F 1 "PWR_FLAG" H 3300 6823 50  0000 C CNN
+F 2 "" H 3300 6650 50  0001 C CNN
+F 3 "~" H 3300 6650 50  0001 C CNN
+	1    3300 6650
 	1    0    0    -1  
 $EndComp
 Text GLabel 8550 4550 1    50   Output ~ 0
@@ -953,7 +949,7 @@ Connection ~ 3950 3450
 Wire Wire Line
 	3950 3450 3950 3750
 Wire Wire Line
-	3000 6650 3600 6650
+	3000 6650 3300 6650
 Connection ~ 3600 6650
 Wire Wire Line
 	3000 6950 3600 6950
@@ -1004,10 +1000,6 @@ F 3 "~" H 1250 6450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1100 6450 950  6450
-Wire Wire Line
-	950  6850 1400 6850
-Wire Wire Line
 	2300 6450 2200 6450
 Wire Wire Line
 	2300 6850 2200 6850
@@ -1038,4 +1030,55 @@ Wire Wire Line
 	3350 4250 3350 4350
 Wire Wire Line
 	3350 4250 3350 4400
+Connection ~ 3300 6650
+Wire Wire Line
+	3300 6650 3600 6650
+Wire Wire Line
+	3000 6550 3000 6650
+Text GLabel 3000 6550 1    50   Output ~ 0
+VR
+Connection ~ 2750 6450
+Text Label 950  6850 0    50   ~ 0
+11
+Wire Wire Line
+	950  6850 1400 6850
+Text Label 950  6450 0    50   ~ 0
+12
+Wire Wire Line
+	1100 6450 950  6450
+$Comp
+L Connector:TestPoint VR1
+U 1 1 64F7A7CD
+P 2750 6450
+F 0 "VR1" H 2808 6568 50  0001 L CNN
+F 1 "VR" H 2700 6650 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2950 6450 50  0001 C CNN
+F 3 "~" H 2950 6450 50  0001 C CNN
+	1    2750 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint VAC1
+U 1 1 64F9EC25
+P 2200 6450
+F 0 "VAC1" H 2258 6568 50  0001 L CNN
+F 1 "VAC" H 2150 6650 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2400 6450 50  0001 C CNN
+F 3 "~" H 2400 6450 50  0001 C CNN
+	1    2200 6450
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 6450
+$Comp
+L Connector:TestPoint VAC2
+U 1 1 64FA67ED
+P 2200 6850
+F 0 "VAC2" H 2258 6968 50  0001 L CNN
+F 1 "VAC" H 2150 7050 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2400 6850 50  0001 C CNN
+F 3 "~" H 2400 6850 50  0001 C CNN
+	1    2200 6850
+	-1   0    0    1   
+$EndComp
+Connection ~ 2200 6850
 $EndSCHEMATC
