@@ -554,7 +554,7 @@ U 1 1 64E6AA08
 P 8050 2200
 F 0 "RLY1" V 8817 2200 50  0000 C CNN
 F 1 "NC2D-JP-DC24V" V 8726 2200 50  0000 C CNN
-F 2 "Relay_THT:Relay_DPDT_Panasonic_JP" H 8700 2150 50  0001 L CNN
+F 2 "AlarmUnit:Relay_Pana-NC2D-JP-DC24V" H 8700 2150 50  0001 L CNN
 F 3 "" H 8050 2200 50  0001 C CNN
 	1    8050 2200
 	0    1    -1   0   
@@ -704,10 +704,6 @@ F 3 "~" H 2450 6850 50  0001 C CNN
 	1    2450 6850
 	-1   0    0    1   
 $EndComp
-Text Label 950  6450 0    50   ~ 0
-12
-Text Label 950  6850 0    50   ~ 0
-11
 $Comp
 L power:GND #PWR0115
 U 1 1 64F3F131
@@ -1004,10 +1000,6 @@ F 3 "~" H 1250 6450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1100 6450 950  6450
-Wire Wire Line
-	950  6850 1400 6850
-Wire Wire Line
 	2300 6450 2200 6450
 Wire Wire Line
 	2300 6850 2200 6850
@@ -1045,6 +1037,15 @@ Wire Wire Line
 	3000 6550 3000 6650
 Text GLabel 3000 6550 1    50   Output ~ 0
 VR
+Connection ~ 2750 6450
+Text Label 950  6850 0    50   ~ 0
+11
+Wire Wire Line
+	950  6850 1400 6850
+Text Label 950  6450 0    50   ~ 0
+12
+Wire Wire Line
+	1100 6450 950  6450
 $Comp
 L Connector:TestPoint VR1
 U 1 1 64F7A7CD
@@ -1056,5 +1057,28 @@ F 3 "~" H 2950 6450 50  0001 C CNN
 	1    2750 6450
 	1    0    0    -1  
 $EndComp
-Connection ~ 2750 6450
+$Comp
+L Connector:TestPoint VAC1
+U 1 1 64F9EC25
+P 2200 6450
+F 0 "VAC1" H 2258 6568 50  0001 L CNN
+F 1 "VAC" H 2150 6650 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2400 6450 50  0001 C CNN
+F 3 "~" H 2400 6450 50  0001 C CNN
+	1    2200 6450
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 6450
+$Comp
+L Connector:TestPoint VAC2
+U 1 1 64FA67ED
+P 2200 6850
+F 0 "VAC2" H 2258 6968 50  0001 L CNN
+F 1 "VAC" H 2150 7050 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2400 6850 50  0001 C CNN
+F 3 "~" H 2400 6850 50  0001 C CNN
+	1    2200 6850
+	-1   0    0    1   
+$EndComp
+Connection ~ 2200 6850
 $EndSCHEMATC

@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name AlarmUnit)(type KiCad)(uri /home/gustavo/SP2-68339/AlarmUnit)(options "")(descr ""))
+)
