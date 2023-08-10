@@ -1,4 +1,11 @@
-18990025856807903
+18993409303473903
+AlarmUnit
+MolexConnBarrierStrip12Pos-953mm
+
+
+0
+14
+12
 AlarmUnit
 Relay_Pana-NC2D-JP-DC24V
 
@@ -6,6 +13,13 @@ Relay_Pana-NC2D-JP-DC24V
 0
 8
 8
+AlarmUnit
+WiredJumper
+
+
+0
+2
+2
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)

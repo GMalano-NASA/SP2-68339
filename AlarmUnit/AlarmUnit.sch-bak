@@ -446,7 +446,7 @@ U 1 1 64DB644C
 P 8550 700
 F 0 "J1" V 8385 628 50  0000 C CNN
 F 1 "Conn_01x12_Male" V 8476 628 50  0000 C CNN
-F 2 "" H 8550 700 50  0001 C CNN
+F 2 "AlarmUnit:MolexConnBarrierStrip12Pos-953mm" H 8550 700 50  0001 C CNN
 F 3 "~" H 8550 700 50  0001 C CNN
 	1    8550 700 
 	0    -1   1    0   
@@ -549,12 +549,12 @@ $EndComp
 Wire Wire Line
 	4500 4800 4300 4800
 $Comp
-L Pana_Relay:NC2D-JP-DC24V RLY1
+L AlarmUnit-rescue:NC2D-JP-DC24V-Pana_Relay RLY1
 U 1 1 64E6AA08
 P 8050 2200
 F 0 "RLY1" V 8817 2200 50  0000 C CNN
 F 1 "NC2D-JP-DC24V" V 8726 2200 50  0000 C CNN
-F 2 "AlarmUnit:Relay_Pana-NC2D-JP-DC24V" H 8700 2150 50  0001 L CNN
+F 2 "AlarmUnit:Relay_Pana-NC2D-JP-DC24V" H 8700 2150 50  0000 L CNN
 F 3 "" H 8050 2200 50  0001 C CNN
 	1    8050 2200
 	0    1    -1   0   
@@ -581,7 +581,7 @@ U 1 1 64EA793E
 P 7200 1900
 F 0 "JP1" V 7246 1812 50  0000 R CNN
 F 1 "Jumper" V 7155 1812 50  0000 R CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 7200 1900 50  0001 C CNN
+F 2 "AlarmUnit:WiredJumper" H 7200 1900 50  0001 C CNN
 F 3 "~" H 7200 1900 50  0001 C CNN
 	1    7200 1900
 	0    -1   -1   0   
@@ -592,7 +592,7 @@ U 1 1 64EA8D41
 P 9150 1800
 F 0 "JP2" V 9196 1712 50  0000 R CNN
 F 1 "Jumper" V 9105 1712 50  0000 R CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9150 1800 50  0001 C CNN
+F 2 "AlarmUnit:WiredJumper" H 9150 1800 50  0001 C CNN
 F 3 "~" H 9150 1800 50  0001 C CNN
 	1    9150 1800
 	0    -1   -1   0   
@@ -603,7 +603,7 @@ U 1 1 64EA9CA2
 P 9450 2000
 F 0 "JP3" V 9496 1912 50  0000 R CNN
 F 1 "Jumper" V 9405 1912 50  0000 R CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9450 2000 50  0001 C CNN
+F 2 "AlarmUnit:WiredJumper" H 9450 2000 50  0001 C CNN
 F 3 "~" H 9450 2000 50  0001 C CNN
 	1    9450 2000
 	0    -1   -1   0   
@@ -831,7 +831,7 @@ Wire Wire Line
 	3600 6950 4250 6950
 Connection ~ 4250 6950
 Wire Wire Line
-	4250 6950 4900 6950
+	4250 6950 4600 6950
 $Comp
 L power:GND #PWR0106
 U 1 1 64FDCAFE
@@ -896,8 +896,6 @@ F 3 "" H 8350 3850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4250 6950 4250 7000
-Wire Wire Line
-	3350 4050 3350 4250
 Wire Wire Line
 	3950 6650 3600 6650
 Wire Wire Line
@@ -988,17 +986,6 @@ Text Notes 1900 4750 0    50   ~ 0
 SET POINT
 Text Notes 750  6650 0    50   ~ 0
 220VAC
-$Comp
-L Device:Fuse F1
-U 1 1 64E1133D
-P 1250 6450
-F 0 "F1" V 1145 6450 50  0000 C CNN
-F 1 "Fuse" V 1144 6450 50  0001 C CNN
-F 2 "" V 1180 6450 50  0001 C CNN
-F 3 "~" H 1250 6450 50  0001 C CNN
-	1    1250 6450
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	2300 6450 2200 6450
 Wire Wire Line
@@ -1012,7 +999,7 @@ F 1 "2.2uF" V 3336 4250 50  0000 C CNN
 F 2 "Capacitor_THT:CP_Radial_Tantal_D5.0mm_P2.50mm" H 3538 4100 50  0001 C CNN
 F 3 "~" H 3500 4250 50  0001 C CNN
 	1    3500 4250
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR0113
@@ -1026,10 +1013,6 @@ F 3 "" H 3650 4250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 3350 4250
-Wire Wire Line
-	3350 4250 3350 4350
-Wire Wire Line
-	3350 4250 3350 4400
 Connection ~ 3300 6650
 Wire Wire Line
 	3300 6650 3600 6650
@@ -1058,10 +1041,10 @@ F 3 "~" H 2950 6450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint VAC1
+L Connector:TestPoint E13
 U 1 1 64F9EC25
 P 2200 6450
-F 0 "VAC1" H 2258 6568 50  0001 L CNN
+F 0 "E13" H 2258 6568 50  0001 L CNN
 F 1 "VAC" H 2150 6650 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2400 6450 50  0001 C CNN
 F 3 "~" H 2400 6450 50  0001 C CNN
@@ -1070,10 +1053,10 @@ F 3 "~" H 2400 6450 50  0001 C CNN
 $EndComp
 Connection ~ 2200 6450
 $Comp
-L Connector:TestPoint VAC2
+L Connector:TestPoint E2
 U 1 1 64FA67ED
 P 2200 6850
-F 0 "VAC2" H 2258 6968 50  0001 L CNN
+F 0 "E2" H 2258 6968 50  0001 L CNN
 F 1 "VAC" H 2150 7050 50  0000 L CNN
 F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 2400 6850 50  0001 C CNN
 F 3 "~" H 2400 6850 50  0001 C CNN
@@ -1081,4 +1064,55 @@ F 3 "~" H 2400 6850 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Connection ~ 2200 6850
+Wire Wire Line
+	3350 4050 3350 4250
+Wire Wire Line
+	3350 4250 3350 4400
+$Comp
+L Connector:TestPoint GND1
+U 1 1 64E15C9F
+P 4600 6950
+F 0 "GND1" H 4658 7068 50  0001 L CNN
+F 1 "GND" H 4550 7150 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 4800 6950 50  0001 C CNN
+F 3 "~" H 4800 6950 50  0001 C CNN
+	1    4600 6950
+	1    0    0    -1  
+$EndComp
+Connection ~ 4600 6950
+Wire Wire Line
+	4600 6950 4900 6950
+$Comp
+L Connector:TestPoint VAC1
+U 1 1 64E240EF
+P 950 6450
+F 0 "VAC1" H 1008 6568 50  0001 L CNN
+F 1 "VAC" H 900 6650 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 1150 6450 50  0001 C CNN
+F 3 "~" H 1150 6450 50  0001 C CNN
+	1    950  6450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:Fuse F1
+U 1 1 64E1133D
+P 1250 6450
+F 0 "F1" V 1145 6450 50  0000 C CNN
+F 1 "Fuse" V 1144 6450 50  0001 C CNN
+F 2 "" V 1180 6450 50  0001 C CNN
+F 3 "~" H 1250 6450 50  0001 C CNN
+	1    1250 6450
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint VAC2
+U 1 1 64E348EE
+P 950 6850
+F 0 "VAC2" H 1008 6968 50  0001 L CNN
+F 1 "VAC" H 900 7050 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm" H 1150 6850 50  0001 C CNN
+F 3 "~" H 1150 6850 50  0001 C CNN
+	1    950  6850
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name Pana_Relay)(type Legacy)(uri /home/gustavo/SP2-68339/AlarmUnit/Panasonic_Relay.lib)(options "")(descr ""))
+  (lib (name AlarmUnit-rescue)(type Legacy)(uri ${KIPRJMOD}/AlarmUnit-rescue.lib)(options "")(descr ""))
 )
